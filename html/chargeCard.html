@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>玩家充卡</title>
+		<!--<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="../assets/font-awesome/css/font-awesome.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/base.css"/>-->
+		<link rel="stylesheet" type="text/css" href="css/buy.css"/>
+		<!--<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src=".assets/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+		<script src="assets/layer/layer.js" type="text/javascript" charset="utf-8"></script>-->
+	</head>
+	<body>
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+		    <h3 class="panel-title"><i class="fa fa-shopping-bag" aria-hidden="true"></i>玩家充卡</h3>
+		  </div>
+		  <div class="panel-body wrapPanel">
+		  	  <form class="form-horizontal">							 
+				  
+				  <div class="form-group">
+				    <label class="col-sm-2 control-label">玩家ID<span class="ps">(PS:游戏大厅界面左上角的ID号码)</span></label>
+				    <div class="col-sm-10">
+				        <input type="text" class="form-control user" >
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label class="col-sm-2 control-label">充卡数量</label>
+				    <div class="col-sm-10">
+				        <input type="text" class="form-control amount" >
+				    </div>
+				  </div>
+				  <div class="write_info">请填写数字并且不能为空</div>
+				  				  
+				  <div class="form-group" >
+					    <div class="col-sm-10">
+					       <button class="btn btn-danger chargeCard" type="button" >充卡</button>
+					    </div>
+				  </div>
+			  </form> 	  
+		  </div>
+		</div>
+		
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+		    <h3 class="panel-title"><i class="fa fa-outdent" aria-hidden="true"></i>房卡统计</h3>
+		  </div>
+		  <div class="panel-body wrapPanel">
+		  	  <div class="table-responsive">
+				  <table class="table table-striped">
+				  	<thead>
+				        <tr>
+				        	<th>时间</th>
+				            <th>赠送数量</th>
+				            <th>充值数量</th>
+				        </tr>
+					    </thead>
+					    <tbody id="tbody">
+					        <tr>
+					            <td>今日</td>
+					            <td class="toSend"></td>
+					            <td class="toCharge"></td>
+					        </tr>
+					        <tr>
+					            <td>昨日</td>
+					            <td class="yeSend"></td>
+					            <td class="yeCharge"></td>
+					        </tr>
+					    </tbody>
+				  </table>
+				</div> 
+		  </div>
+		</div>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/chargeCard.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

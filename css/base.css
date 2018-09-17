@@ -1,0 +1,226 @@
+/*公共样式*/
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin:0; padding:0; }
+fieldset, img,input,button { border:none; padding:0;margin:0;outline-style:none; }   /*去掉input等聚焦时的蓝色边框*/
+ul, ol { list-style:none; }
+input { padding-top:0; padding-bottom:0; font-family: "SimSun","宋体";}
+select, input { vertical-align:middle;}
+select, input, textarea { font-size:14px; margin:0; }
+textarea { resize:none; } /*防止拖动*/
+img {border:0; vertical-align:middle; }  /*  去掉图片低测默认的3像素空白缝隙，或者用display：block也可以*/
+table { border-collapse:collapse; }
+a,a:active,a:hover,a:focus,a:visited{text-decoration: none !important; color: #fff;}
+body,html {
+	font-family: "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+	width: 100%;
+	/*height: 100%;*/
+    color:#666;
+    background:#fff;
+    /*font-size: 15px;*/
+   overflow-x: hidden;
+    overflow-y: auto;
+}
+input,textarea{
+	font-family: "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+.fl{
+	
+	
+	float: left;
+}
+.fr{
+	float: right;
+}
+.glyphicon{
+	margin-right: 8px;
+}
+.wrap-body{
+	margin: 10px;
+	width: 100%;
+	height: 100%;
+}
+/*头部*/
+.navbar{
+	margin: 0;
+	z-index: 500;
+	margin-bottom: 0 !important;
+}
+.navbar a{
+	color:#fff !important;
+}
+/*.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover,.dropdown-toggle:hover{
+	background: rgba(0,0,0,0.1) !important;
+    color: #f6f6f6 !important;
+}*/
+	
+/*侧边栏*/
+#sidebar {
+    width: 230px;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    padding-top: 51px;
+    color: #fff;
+	background: #f3f3f3;   
+}
+.sidebar-menu{
+	color: #afafaf;
+}
+
+.sidebar-menu>li>div,.sub li {
+    border-left: 3px solid transparent;
+    cursor: pointer;
+}
+.sidebar,.sub li a {
+    color: #b8c7ce !important;
+}
+.sidebar-menu li>div,.sub li {
+    position: relative;
+}
+.sidebar-menu>li>div{
+    padding: 12px 5px 12px 15px;
+    display: block;
+}
+.sub li{
+	padding: 12px 5px 12px 20px;
+    display: block;
+    background: #F7F7F7;
+}
+.sidebar-menu>li>div:hover,.sub li:hover{
+    color: #57565b;
+    background: #E6E7EC;
+}
+.subBg{
+	border-left: 3px solid #3c8dbc !important;
+}
+.fa{
+	margin-right: 8px;
+	/*transition:all 400ms linear;*/
+}
+.sub{
+	display: none;
+}
+.active0{
+	/*display: none;*/
+	transform:rotate(90deg);
+}
+.content{
+	/*background: #F2DEDE;*/
+	margin-left: 230px;
+	/*background: #fff;*/
+	/*transition: transform .3s ease-in-out,margin .3s ease-in-out;*/	
+}
+.sidebar-toggle {
+    float: left;
+    background-color: transparent;
+    background-image: none;
+    padding: 15px 15px;
+    font-family: fontAwesome;
+    color: #333;
+}
+.sidebar-toggle:before {
+    content: "\f0c9";
+}
+.wrapTable{
+	/*overflow: hidden;*/
+}
+#page{
+	float: right;
+	margin-right: 50px;
+}
+/*.main-sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 51px;
+    min-height: 100%;
+    width: 230px;
+    /*z-index: 810;*/
+    /*color: #fff;
+	background: #f3f3f3;
+}*/
+.total{
+	font-size: 16px;
+	float: left;
+	margin: 20px 50px;
+}
+.color{
+	background: #428bca;
+}
+.modal-open{
+	padding-right: 0 !important;
+}
+.pan{
+	margin-bottom: 0;
+}
+
+.close{
+	margin: 5px;
+}
+.asterisk{
+	color: red;
+	margin-right: 5px;
+}
+
+.warn{
+	width: 50%;
+	margin: 0 auto;
+	color: red;
+	display: none;
+}
+.pswBorder{
+	border: red solid 1px;
+}
+@media screen and (max-width: 767px) {
+    #sidebar{
+    	transform: translate(-230px, 0);
+    	transition: all 300ms linear;
+    }
+    .content{
+    	/*overflow: hidden;*/
+    	margin-left: 0;
+    	transition: all 300ms linear;
+    }
+    .sidebar-open{
+    	transform: translate(0, 0) !important;
+    	transition: all 300ms linear ;
+    }
+    .content-margin{
+    	transform: translate(230px, 0);
+    }
+    .total{
+		margin: 0 auto;
+		/*clear: both;
+		overflow: hidden;*/
+	}
+	#page{
+		margin: 0 auto;
+		/*clear: both;
+		overflow: hidden;*/
+	}
+}
+.imformation{
+	width: 100%;
+	/*height: 20%;*/
+	overflow: hidden;
+	border-bottom: 1px solid #ccc;
+}
+.imformation dl{
+	width: 45%;
+	margin: 0.2rem;
+}
+.imformation dt{
+	/*padding: 0.5rem 0 0.5rem 0.5rem;*/
+	margin-left: 0.5rem
+}
+.imformation dd{
+	/*background: #C0C0C0;*/
+}
+.ps{
+	color: red;
+}
+
+
+
+
+

@@ -1,0 +1,255 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="assets/font-awesome/css/font-awesome.css"/>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>		
+		<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="assets/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="assets/js/bootstrap-paginator.js" type="text/javascript" charset="utf-8"></script>
+		<script src="assets/layer/layer.js" type="text/javascript" charset="utf-8"></script>		
+		<title>代理微信端</title>
+		
+		<style>
+			.boxOne2{position: relative;}
+			.model{position: absolute;z-index: 50;left: 30%;top: 25%;display: none;}
+			.modelCot{width: 3rem;height: 2.5rem;background: white;border-radius: 6px;text-align: center;}
+			.markBox{overflow: hidden;margin-top: 0.5rem}
+			.markBox span{color: black;font-size: 0.16rem;}
+			.markBox input{width: 1.8rem;height:0.36rem;border: 1px solid #999;border-radius: 5px;}
+			
+		</style>
+		
+	</head>
+	<body class="sidebar-mini wysihtml5-supported skin-black boxOne2">
+		<nav class="navbar navbar-default ">
+			
+		  <div class="container-fluid bg-primary">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		        <span class="sr-only"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+		        <span class="sr-only">Toggle navigation</span>
+		      </a>
+		      <a class="navbar-brand" href="#">苍南麻将代理后台</a>
+		      
+		    </div>
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">		      		      
+		      <ul class="nav navbar-nav navbar-right">
+		      	<!-- User Account: style can be found in dropdown.less -->
+		          <!--<li class="dropdown user user-menu">
+		            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+		              <i class="fa fa-user"></i>
+		              <span>欢迎回来：<span class="username"></span></span>
+		            </a>		            
+		          </li>-->
+		          <!-- Messages: style can be found in dropdown.less-->
+		          <li class="dropdown messages-menu" >
+		            <a href="#" class="dropdown-toggle" data-toggle="modal" data-target="#passModal">
+		              <i class="fa fa-lock"></i>
+		              <span>修改密码</span>
+		            </a>		            
+		          </li>
+		          <!-- Notifications: style can be found in dropdown.less -->
+		          <li class="dropdown notifications-menu exit">
+		            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+		              <i class="fa fa-sign-out"></i>
+		              <span >退出</span>
+		            </a>		            
+		          </li>
+		          <!-- Tasks: style can be found in dropdown.less -->
+		          <!--<li class="dropdown tasks-menu">
+		            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+		              <i class="fa fa-flag-o"></i>
+		              <span>版本号v1.0.0</span>
+		            </a>		            
+		          </li>		          		         		        -->
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>
+		<aside class="main-sidebar">
+		<div id="sidebar" class="nav-collapse" tabindex="5000" style="overflow: hidden; outline: none;">
+              <!-- sidebar menu start-->
+              <ul class="sidebar-menu" id="nav-accordion">           	  	
+                  <li class="buyCard">
+                      <!--<div class="dcjq-parent">
+                          <i class="fa fa-money" aria-hidden="true"></i>
+                          <span>房卡购买</span>
+                          <span class="pull-right-container">
+				              <i class="fa fa-angle-right pull-right"></i>
+				          </span>
+                      </div>-->
+                      <!--<ul class="sub">
+                          <li class="gamer"><a><i class="fa fa-circle-o"></i>游戏玩家</a></li>
+                          <li class="recode"><a><i class="fa fa-circle-o"></i>房卡记录</a></li>
+                      </ul>-->
+                  </li>
+                  <li class="gamerCharge">
+                      <div class="dcjq-parent">
+                          <i class="fa fa-gg-circle" aria-hidden="true"></i>
+                          <span>玩家充卡</span>
+                          <span class="pull-right-container">
+				              <i class="fa fa-angle-right pull-right"></i>
+				          </span>
+                      </div>
+                  </li>
+                  <!--<li class="gamerWith">
+                      <div class="dcjq-parent">
+                          <i class="fa fa-credit-card" aria-hidden="true"></i>
+                          <span>提现</span>
+                          <span class="pull-right-container">
+				              <i class="fa fa-angle-right pull-right"></i>
+				          </span>
+                      </div>
+                  </li> -->
+                  <li class="teamList">
+                      <div class="dcjq-parent">
+                          <i class="fa fa-envira" aria-hidden="true"></i>
+                          <span>团队人员</span>
+                          <span class="pull-right-container">
+				              <i class="fa fa-angle-right pull-right"></i>
+				          </span>
+                      </div>
+                  </li>
+                  <!--<li class="RecodeList">
+                      <div class="dcjq-parent">
+                          <i class="fa fa-outdent" aria-hidden="true"></i>
+                          <span>玩家充值记录</span>
+                          <span class="pull-right-container">
+				              <i class="fa fa-angle-right pull-right"></i>
+				          </span>
+                      </div>
+                  </li>-->
+                  
+                  <!--<li class="moneyList">
+                      <div class="dcjq-parent">
+                          <i class="fa fa-outdent" aria-hidden="true"></i>
+                          <span>佣金记录</span>
+                          <span class="pull-right-container">
+				              <i class="fa fa-angle-right pull-right"></i>
+				          </span>
+                      </div>
+                  </li> -->
+                  
+              </ul>
+              <!-- sidebar menu end-->
+          </div>
+          </aside>
+          <div class="content">
+          	  <div class="imformation">
+          	  	    <dl class="fl">
+          	  	    	<dt class="fl">昵称：</dt>
+          	  	    	<dd class="fl nickName"></dd>
+          	  	    </dl>
+          	  	    <dl class="fl">
+          	  	    	<dt class="fl">真实姓名：</dt>
+          	  	    	<dd class="fl InvitationCode"></dd>
+          	  	    </dl>
+          	  	    <dl class="fl">
+          	  	    	<dt class="fl">房卡数：</dt>
+          	  	    	<dd class="fl count"></dd>
+          	  	    </dl>
+          	  	    <dl class="fl">
+          	  	    	<dt class="fl">佣金：</dt>
+          	  	    	<dd class="fl money"></dd>
+          	  	    </dl>
+          	  	    <dl class="fl">
+          	  	    	<dt class="fl">今日充值数量：</dt>
+          	  	    	<dd class="fl todayRecharge"></dd>
+          	  	    </dl>
+          	  	    <dl class="fl">
+          	  	    	<dt class="fl">累积充值数量：</dt>
+          	  	    	<dd class="fl totalRecharge"></dd>
+          	  	    </dl>
+          	  	    
+          	  	    <!--========================-->
+          	  	    
+          	  	    <dl class="fl">
+          	  	    	<dt class="fl">上次登录时间：</dt>
+          	  	    	<dd class="fl InvitationCode2"></dd>
+          	  	    </dl>
+          	  	    <dl class="fl">
+          	  	    	<dt class="fl">注册时间：</dt>
+          	  	    	<dd class="fl count2"></dd>
+          	  	    </dl>
+          	  	    <dl class="fl">
+          	  	    	<dt class="fl">身份证号码：</dt>
+          	  	    	<dd class="fl idCards"></dd>
+          	  	    </dl>
+          	  	    <dl class="fl">
+          	  	    	<dt class="fl">手机号码：</dt>
+          	  	    	<dd class="fl money2"></dd>
+          	  	    </dl>
+          	  	    <dl class="fl">
+          	  	    	<dt class="fl">上级昵称：</dt>
+          	  	    	<dd class="fl todayRecharge2"></dd>
+          	  	    </dl>
+          	  	    <dl class="fl">
+          	  	    	<dt class="fl">上级游戏标识：</dt>
+          	  	    	<dd class="fl totalRecharge2"></dd>
+          	  	    </dl>
+          	  </div>
+          	  
+          	  <button id = "btn2" class="btn" style="display: none;">绑定邀请人</button>
+          	  <button id = "btnName" class="btn" style="background: #2db7f5;color: #fff;">珂珂</button>
+          	  <div class="detail"></div>
+          </div>
+          
+          
+        <!--模态框（Modal）修改密码--> 
+		<div class="modal fade" id="passModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog modalPos">
+				<div class="modal-content">
+					<div class="panel panel-default pan">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							&times;
+						</button>
+					  <div class="panel-heading "><i class="fa fa-lock"></i>修改密码</div>
+					  <div class="panel-body">
+					      <form class="form-horizontal">
+							  <div class="form-group">
+							    <label for="inputEmail3" class="col-sm-2 control-label"><span class="asterisk">*</span>原始密码</label>						    
+							    <div class="col-sm-10">
+							        <input type="password" class="form-control exitPass loginpwd" >
+							    </div>
+							  </div><div class="form-group">
+							    <label for="inputEmail3" class="col-sm-2 control-label"><span class="asterisk">*</span>新密码</label>
+							    <div class="col-sm-10">
+							      <input type="password" class="form-control exitPass resetPsw" >
+							    </div>
+							  </div>
+							  <div class="form-group">
+							    <label for="inputEmail3" class="col-sm-2 control-label"><span class="asterisk">*</span>确认密码</label>						    
+							    <div class="col-sm-10">
+							        <input type="password" class="form-control exitPass confirmSecrecypwd" >
+							    </div>
+							  </div>
+							</form>
+							<div class="warn">请填写正确信息！</div>
+					  </div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+						</button>	
+						<button type="button" class="btn btn-primary exitBtn">
+							保存
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+          <!--<script src="js/common.js" type="text/javascript" charset="utf-8"></script>-->
+	</body>
+</html>

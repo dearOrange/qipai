@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>游戏公告</title>
+		<script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<!--<script src="js/zepto.js" type="text/javascript" charset="utf-8"></script>-->		
+	</head>
+	<body>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+			    <h3 class="panel-title"><i class="fa fa-envira" aria-hidden="true"></i>团队人员</h3>
+			</div>
+			<div class="panel-body wrapPanel">
+			  	<div class="table-responsive">
+					<table class="table table-striped">
+						<thead>
+					        <tr>
+					            <th>昵称</th>
+					            <th>游戏标识</th>
+					            <th>房卡数</th>
+						    	<th>代理等级</th>
+						    	<th>团队中等级</th>
+					        </tr>
+					    </thead>
+					    <tbody id="tbody">
+					        
+					    </tbody>
+				  	</table>
+				</div> 
+		  	</div>
+		  	
+		</div>		
+		
+		<script type="text/javascript">
+			/*var url=window.location.href;  
+			var userid = url.substring(url.lastIndexOf('=')+1, url.length);
+if(userid.substr(userid.length-1,1) == "#"){
+				userid = userid.substring(userid.length-1,0);
+			}else{
+				userid = userid;	
+			}*/
+//			var http = "http://192.168.0.162:8011";
+			var url = "http://48q9id.natappfree.cc/agentEnter/index.html?userid=2071&openid=ooeiIv0iJgRpm7bKJL_l3vMrINUk";
+			//var url=window.location.href;
+			var userId1 = url.substring(url.lastIndexOf('userid=')+7, url.length);
+			var userid = "";
+			var userId = userId1.split('&openid=');
+				userid = userId[0];
+				openid = userId[1];
+//			console.log(userid)
+			var changeToken = sessionStorage.getItem("agentToken");
+			$.ajax({
+				type:"post",
+				url: http + "/app/agent/selectAppAgentTeamList",
+				async:true,
+				cache:false,
+				contentType: "application/json;charset=utf-8",
+				dataType: 'json',	
+				data: JSON.stringify({
+					"agentToken":changeToken
+				}),
+				success: function(res){
+					if(res.code == 100){
+						var currentPage = res.data.currentPage;
+						var pageSize = res.data.pageSize;
+						var totalPages = res.data.totalPages;
+						var totalRows = res.data.totalRows;
+						var data = res.data.resultList;
+						var list = '';
+						for(var i=0;i<data.length;i++){
+							list += '<tr>'+
+							            '<td>'+data[i].nickname+'</td>'+
+							            '<td>'+data[i].id+'</td>'+
+							            '<td>'+data[i].fanka+'</td>'+
+								    	'<td>'+data[i].agentName+'</td>'+
+								    	'<td>'+data[i].count+'</td>'+
+							        '</tr>'
+						}
+						$('#tbody').html(list)
+					}else if(res.code == 101){
+						alert(res.msg)
+					}else if(res.code == 502){
+						alert(res.msg);
+						window.location.href = './login.html'
+					}
+				}
+			});
+			
+		</script>
+	</body>
+</html>

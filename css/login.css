@@ -1,0 +1,82 @@
+.wrapCode{
+	position: relative;
+}
+.code{
+	width: 75%;
+}
+.verificationcode{
+	height: 50px;
+	width: 23%;
+	border: 3px solid #ddd;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.img{
+	width: 100%;
+	height: 100%;
+}
+.form-top-right{
+	line-height: 0;
+}
+body,html{
+	font-family: "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+	
+}
+.username{
+	position: relative;
+}
+.realname{
+	position: relative;
+}
+.idcard{
+	position: relative;
+}
+.phone{
+	position: relative;
+}
+.userId{
+	position: relative;
+}
+input[type="text"], input[type="password"]{
+	padding: 0 20px 0 45px;
+}
+.iconMini{
+	/*font-size: 17px;*/
+	position: absolute;
+	top: 50%;
+	left: 20px;
+	transform: translate(0,-50%);
+}
+.password{
+	position: relative;
+}
+.pro{
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	top: 0;
+	left: 100px;
+}
+.tooltip > .tooltip-inner {
+	background-color: #4aaf51; 
+	color: #fff;
+	padding: 8px;
+	font-size: 14px;
+		
+}
+.tooltip.top .tooltip-arrow {
+	border-top-color: #4aaf51;
+}
+.border{
+	border: solid 3px #4aaf51 !important;
+}
+@media screen and (max-width: 767px) {
+	.code{
+		width: 68%;		
+	}
+	.verificationcode{
+		width: 30%;
+	}
+}
+
